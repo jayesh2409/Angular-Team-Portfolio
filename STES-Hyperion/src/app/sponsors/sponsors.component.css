@@ -1,0 +1,241 @@
+:host{
+    display: block;
+    /* background: linear-gradient(190deg, white 0%, black 100%); */
+    background-color: white;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.main-title{
+  padding: 20px;
+}
+
+.one{
+  font-family: 'Orbitron', sans-serif !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+  font-size: 100px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.two{
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 30px;
+  font-weight:400;
+  padding-top: 10px;
+  
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+  letter-spacing: 3px;
+  word-spacing: 5px;
+}
+
+.sponsor-blank{
+    padding: 0;
+    margin: 0;
+    height: 70px;
+}
+
+.sponsors-main-introduction{
+
+  background:
+    linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.799),
+      rgba(0, 0, 0, 0.496), 
+      rgba(0, 0, 0, 0)
+    ),
+    url("/assets/sponsors/cover_images/karimotorspeedway.JPG");
+
+  /* background: linear-gradient(90deg,
+      rgba(0, 0, 0, 0.799),
+      rgba(0, 0, 0, 0.496), 
+      rgba(0, 0, 0, 0)
+    ); */
+
+  background-size: cover;
+  background-position: center;
+
+
+/* 
+    background-image: url('/assets/image/sponsors_image/contact_bg.JPG');
+    background: linear-gradient(to bottom, #4facfe8a, #00f1fe3c); */
+    /* filter: grayscale(70%); */
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* how tall the image area is */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    min-height: 625px;
+}
+
+
+.sponsor-main-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; /* or space-around / space-between */
+  gap: 20px; /* space between blocks */
+  padding: 20px;
+}
+
+hr {
+  border: none;           /* Remove default border */
+  height: 2px;            /* Thickness of the line */
+  background-color: #000000; /* Color of the line */
+  margin: 20px 0;         /* Space above and below */
+}
+
+
+.sth{
+  font-size: 100px;
+}
+
+.sponsors-home{
+  font-family: 'Orbitron', sans-serif !important;
+  background-color: rgba(255, 255, 255, 0);
+  padding-bottom: 100px;
+}
+
+.sponsors-title-home{
+  font-size:xx-large;
+  font-weight: 600;
+}
+
+.sponsors-logo-home{
+  display: grid;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  grid-template-columns: repeat(3, 300px); /* 3 children per row */
+}
+
+.logo-for-hover{
+  transition: 0.3s ease;
+  width: 300px;
+  height: 300px;
+}
+
+.logo-for-hover:hover{
+  /* filter: brightness(1.3); slightly lighter */
+  background-color: rgba(0, 0, 0, 0.149);
+  transform: scale(1.03);
+}
+
+
+
+
+
+
+
+
+
+
+.hover-wrapper {
+    position: relative;
+    font-family: 'Titillium Web', sans-serif;
+    width: 300px;     /* adjust to your image size */
+    height: 300px;
+}
+
+.hover-wrapper a {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-padding{
+    padding: 10px;
+  }
+
+.logo-for-hover {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.hover-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(98, 98, 98, 0.756);   /* invisible initially */
+    color: white;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+/* Hover effect */
+.hover-wrapper:hover .hover-overlay {
+    background-color: rgba(0,0,0,0.8); /* solid bg on hover */
+    opacity: 1;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+
+  .one{
+
+    padding-top: 30px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+
+  .two{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 15px;
+
+    letter-spacing: 1px;
+    word-spacing: 2px;
+  }
+
+  .hover-wrapper {
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    width: 150px;     /* adjust to your image size */
+    height: 150px;
+  }
+
+  .hover-overlay{
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .overlay-padding{
+    padding: 3px;
+  }
+
+  .sponsors-logo-home{
+  display: grid;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  grid-template-columns: repeat(3, 300px); /* 3 children per row */
+  gap: 50px;
+}
+
+.logo-for-hover{
+  transition: 0.3s ease;
+  width: 150px;
+  height: 150px;
+}
+
+  .sponsors-logo-home {
+    grid-template-columns: repeat(2, 100px); /* 2 per row on mobile */
+  }
+}

@@ -1,0 +1,61 @@
+<div style="height: 70px; background-color: rgb(52, 52, 52);"></div>
+
+<div class="contact-container" style="justify-content: right; display: flex; flex-direction: row;">
+    <div class="left-side" style="flex: 1; display: flex; justify-content: center; align-items: center;"></div>
+
+    <div class="right-side" style="padding: 50px; flex: 1; display: flex; justify-content: center; align-items: center;">
+
+        <div class="form-container" style="background-color: rgba(0, 0, 0, 0.304); display: flex; flex-direction: column; padding: 30px; border-radius: 10px;">
+            <div class="title-container field">
+                <h1>CONTACT US</h1>
+            </div>
+
+            <form [formGroup]="contactForm" (ngSubmit)="submitForm()" novalidate style="display:flex; flex-direction: column;justify-content: center; align-items: center;">
+
+                <!-- Name Field -->
+                <input
+                    type="text"
+                    placeholder="Name"
+                    formControlName="name"
+                    style="margin-bottom: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc;"
+                />
+                <small *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" style="color: red; margin-bottom: 10px;">
+                    Name is required
+                </small>
+
+                <!-- Email Field -->
+                <input
+                    type="email"
+                    placeholder="Email"
+                    formControlName="email"
+                    style="margin-bottom: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc;"
+                />
+                <small *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid" style="color: red; margin-bottom: 10px;">
+                    Valid email is required
+                </small>
+
+                <!-- Message Field -->
+                <textarea
+                    placeholder="Message"
+                    formControlName="message"
+                    style="margin-bottom: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; min-height: 100px;"
+                ></textarea>
+                <small *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid" style="color: red; margin-bottom: 10px;">
+                    Message is required
+                </small>
+
+                <!-- Send Button -->
+                <button 
+                    type="submit"
+                    [disabled]="contactForm.invalid || isSending"
+                    style="padding: 12px 20px; border-radius: 5px; border: none; background-color: #ff3a13; color: rgb(255, 255, 255); cursor: pointer;"
+                >
+                    <span *ngIf="!isSending">Send</span>
+                    <span *ngIf="isSending">Sending...</span>
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+</div>

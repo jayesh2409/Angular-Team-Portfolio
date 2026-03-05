@@ -1,0 +1,1201 @@
+<div class="blank" style="height: 70px; width: 100%; background-color: black;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- main bg page started-->
+
+
+
+<!-- ---------------------------------STARTED---------------------------------- -->
+<div style="display: flex; flex-direction: row; border-top: 2px solid black; height: auto;">
+    
+    <!-- --------------------------------------------------------------------------- -->
+    <!-- make them display flex and in row -->
+
+
+
+    <!-- -------------------------------------LIST SUBSYSTEMS---------------------------------------- -->
+    <div class="list">
+
+
+        <!-- sponsors as a title -->
+        <div class="title-subsyst">
+            SUBSYSTEMS
+        </div>
+
+
+
+        <!-- --------MAKING COLUMNS--------- -->
+        <div class="inner-list" style="width: 250px; gap: 20px; padding-top: 0px; display:flex; flex-direction: column; justify-content: center; align-items: left; padding-left: 30px;">
+
+            <!-- ============================STEERING button and pointer======================== -->
+            <div class="your-btn" style="display: flex; flex-direction: row; gap: 30px; position: relative;">
+                <div class="system A">
+                    <a (click)="showOverlay(1)" (mouseleave)="hideOverlayWithDelay()">STEERING</a>
+                </div>
+
+                <div class="triangle" *ngIf="activeOverlay === 1"></div>
+            </div>
+
+            
+            <!-- ============================SUSPENSION button and pointer======================== -->
+            <div class="your-btn" style="display: flex; flex-direction: row; gap: 30px;">
+                <div class="system A">
+                    <a (click)="showOverlay(2)" (mouseleave)="hideOverlayWithDelay()">SUSPENSION</a>
+                </div>
+
+                <div class="triangle" *ngIf="activeOverlay === 2"></div>
+            </div>
+
+            
+            <!-- ============================CAE button and pointer======================== -->
+            <div class="your-btn" style="display: flex; flex-direction: row; gap: 30px;">
+                <div class="system A">
+                    <a (click)="showOverlay(3)" (mouseleave)="hideOverlayWithDelay()">CAE</a>
+                </div>
+
+                <div class="triangle" *ngIf="activeOverlay === 3"></div>
+            </div>
+
+            
+            <!-- ============================DESIGN button and pointer======================== -->
+            <div class="your-btn" style="display: flex; flex-direction: row; gap: 30px;">
+                <div class="system A">
+                    <a (click)="showOverlay(4)" (mouseleave)="hideOverlayWithDelay()">DESIGN</a>
+                </div>
+
+                <div class="triangle" *ngIf="activeOverlay === 4"></div>
+            </div>
+
+
+            <!-- ============================ELECTRICAL button and pointer======================== -->
+            <div class="your-btn" style="display: flex; flex-direction: row; gap: 30px;">
+                <div class="system A">
+                    <a (click)="showOverlay(7)" (mouseleave)="hideOverlayWithDelay()">ELECTRICAL</a>
+                </div>
+
+                <div class="triangle" *ngIf="activeOverlay === 7"></div>
+            </div>
+
+
+            <!-- ============================SOLAR button and pointer======================== -->
+            <!-- <div class="your-btn" style="display: flex; flex-direction: row; gap: 30px;">
+                <div class="system A">
+                    <a (click)="showOverlay(8)" (mouseleave)="hideOverlayWithDelay()">SOLAR</a>
+                </div>
+
+                <div class="triangle" *ngIf="activeOverlay === 8"></div>
+            </div> -->
+
+
+            <!-- ============================AUTONOMOUS button and pointer======================== -->
+            <div class="your-btn" style="display: flex; flex-direction: row; gap: 30px;">
+                <div class="system A">
+                    <a (click)="showOverlay(9)" (mouseleave)="hideOverlayWithDelay()">AUTONOMOUS</a>
+                </div>
+
+                <div class="triangle" *ngIf="activeOverlay === 9"></div>
+            </div>
+
+
+            <!-- ============================BRAKING button and pointer======================== -->
+            <div class="your-btn" style="display: flex; flex-direction: row; gap: 30px;">
+                <div class="system A">
+                    <a (click)="showOverlay(5)" (mouseleave)="hideOverlayWithDelay()">BRAKING</a>
+                </div>
+
+                <div class="triangle" *ngIf="activeOverlay === 5"></div>
+            </div>
+
+
+            <!-- ============================TRANSMISSION button and pointer======================== -->
+            <div class="your-btn" style="display: flex; flex-direction: row; gap: 30px;">
+                <div class="system A">
+                    <a (click)="showOverlay(6)" (mouseleave)="hideOverlayWithDelay()">TRANSMISSION</a>
+                </div>
+
+                <div class="triangle" *ngIf="activeOverlay === 6"></div>
+            </div>
+
+
+            <!-- ============================MEDIA button and pointer======================== -->
+            <div class="your-btn" style="display: flex; flex-direction: row; gap: 30px;">
+                <div class="system A">
+                    <a (click)="showOverlay(10)" (mouseleave)="hideOverlayWithDelay()">MEDIA</a>
+                </div>
+
+                <div class="triangle" *ngIf="activeOverlay === 10"></div>
+            </div>
+
+
+        </div>
+
+
+        <!-- --------------------------------------------Recruitment link------------------------------------------------------- -->
+        <div class="rec">
+            <div class="recruitment">
+                <a style="color:white;" href="https://docs.google.com/forms/d/e/1FAIpQLSfJilmm3gLGQkT_OffeSMjEvF-sFZZhIz1hJn8D20SrD1ZdSQ/viewform">
+                    RECRUITMENT FORM
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Information inside -->
+    <div class="subsystem-full-overlay">
+
+
+
+        
+
+<!-- ===============ALL SUBSYSTEMS IN HYPERION overlay=================== -->
+
+            <div class="functioning" *ngIf="activeOverlay === null">
+
+                <!-- IMAGE CLICK OVERLAY start-->
+
+                <div *ngIf="showPreview" class="overlay-bg" (click)="closePreview()">
+
+                    <!-- counter -->
+                    <div class="countdown">
+                        <p>
+                            {{ countdownValue }}
+                        </p>
+                    </div>
+                     
+
+                    <ng-container *ngIf="isImage">
+                        <img [src]="currentSrc" class="open-image-or-video abc" />
+                    </ng-container>
+
+                    <ng-container *ngIf="!isImage">
+                        <video [src]="currentSrc" class="open-image-or-video abc" playsinline loop autoplay muted controls></video>
+                    </ng-container>
+
+                </div>
+
+                <!-- IMAGE CLICK OVERLAY end -->
+
+                <div class="grid">
+
+                    <!-- Row 1 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/steering/steering_assembly.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Steering Assembly</div>
+                        <div class="s">STEERING</div>
+                    </div>
+
+                    <div class="img">
+                        <video class="abc" (click)="openPreview($event)" autoplay muted loop>
+                            <source src="assets/recruitment/cae/cae_videos/impact.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="subtitle">Impact Simulation</div>
+                        <div class="s">COMPUTER AIDED ENGINEERING</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/suspension/wish_bone.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Wish Bone</div>
+                        <div class="s">SUSPENSION</div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/electrical/pcb.jpeg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">PCB Printed Circuit Board</div>
+                        <div class="s">ELECTRICAL & SIMULATIONS</div>
+                    </div>
+
+
+                    <!-- Center div -->
+                    <div class="empty">
+                        <p>
+                            SUBSYSTEMS
+                        </p>
+                        <p class="inside-text">
+                            Integrated subsystems collaboratively design, control, power, analyze, and support intelligent vehicle operation efficiently reliably.
+                        </p>
+                    </div> 
+
+                    <div class="img">
+                        <img src="/assets/recruitment/autonomous/noisy_cone_detection.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Object-Cone Detection</div>
+                        <div class="s">AUTONOMOUS</div>
+                    </div>
+
+
+
+                    <!-- Row 3 -->
+                    <div class="img">
+                        <img src="assets/recruitment/design/95th.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">95th Percentile</div>
+                        <div class="s">DESIGN</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/transmission/wheel.jpeg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Wheel</div>
+                        <div class="s">TRANSMISSION</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/media/bplan.jpeg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Business Plan</div>
+                        <div class="s">NON TECHNICAL</div>
+                    </div>
+
+                    
+                     
+                </div>
+
+                
+            </div>
+
+<!-- ===============STEERING overlay=================== -->
+
+            <div class="functioning" *ngIf="activeOverlay === 1">
+
+                <!-- IMAGE CLICK OVERLAY start-->
+
+                <div *ngIf="showPreview" class="overlay-bg" (click)="closePreview()">
+
+                    <!-- counter -->
+                    <div class="countdown">
+                        <p>
+                            {{ countdownValue }}
+                        </p>
+                    </div>
+                     
+
+                    <ng-container *ngIf="isImage">
+                        <img [src]="currentSrc" class="open-image-or-video abc" />
+                    </ng-container>
+
+                    <ng-container *ngIf="!isImage">
+                        <video [src]="currentSrc" class="open-image-or-video abc" playsinline loop autoplay muted controls></video>
+                    </ng-container>
+
+                </div>
+
+                <!-- IMAGE CLICK OVERLAY end -->
+
+                <div class="grid">
+
+                    <!-- Row 1 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/steering/steering_assembly.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Steering Assembly</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/steering/steering_wheel.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Steering Wheel</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/steering/rack.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Rack</div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/steering/turning_radius.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Turning Radius</div>
+                    </div>
+
+
+                    <!-- Center div -->
+                    <div class="empty">
+                        <p>
+                            STEERING
+                        </p>
+                        <p class="inside-text">
+                            Master the mechanics that move the wheels, and you command the motion of the vehicle.
+                        </p>
+                    </div> 
+
+                    <div class="img">
+                        <img src="/assets/recruitment/steering/pinion.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Pinion</div>
+                    </div>
+
+
+
+                    <!-- Row 3 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle"></div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                    </div>
+
+                    
+                     
+                </div>
+
+                
+            </div>
+            
+<!-- ===============SUSPENSION overlay=================== -->
+           
+            <div class="functioning" *ngIf="activeOverlay === 2">
+
+                <!-- IMAGE CLICK OVERLAY start-->
+
+                <div *ngIf="showPreview" class="overlay-bg" (click)="closePreview()">
+
+                    <!-- counter -->
+                    <div class="countdown">
+                        <p>
+                            {{ countdownValue }}
+                        </p>
+                    </div>
+
+                    <ng-container *ngIf="isImage">
+                        <img [src]="currentSrc" class="open-image-or-video abc" />
+                    </ng-container>
+
+                    <ng-container *ngIf="!isImage">
+                        <video [src]="currentSrc" class="open-image-or-video abc" playsinline loop autoplay muted controls></video>
+                    </ng-container>
+
+                </div>
+
+                <!-- IMAGE CLICK OVERLAY end -->
+
+                <div class="grid">
+
+                    <!-- Row 1 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/suspension/front_simulation.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Simulation</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/suspension/front_suspension.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Suspension</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/suspension/knuckle.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Knuckle</div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/suspension/wish_bone.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Wish Bone</div>
+                    </div>
+
+
+                    <!-- Center div -->
+                    <div class="empty">
+                        <p>
+                            SUSPENSION
+                        </p>
+                        <p class="inside-text">
+                            Master the forces between the road and the vehicle.
+                        </p>
+                    </div> 
+
+                    <div class="img">
+                        <img src="/assets/recruitment/suspension/swing_arm.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Swing Arm</div>
+                    </div>
+
+
+
+                    <!-- Row 3 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/suspension/8O_rear_suspension.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Suspension</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/suspension/wheel.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Wheel</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/suspension/front_geometry.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Geometry</div>
+                    </div>
+
+                    
+                     
+                </div>
+
+
+            </div>
+            
+<!-- ===============CAE overlay=================== -->
+            <div class="functioning" *ngIf="activeOverlay === 3">
+
+
+                <!-- IMAGE CLICK OVERLAY start-->
+
+                <div *ngIf="showPreview" class="overlay-bg" (click)="closePreview()">
+
+                    <!-- counter -->
+                    <div class="countdown">
+                        <p>
+                            {{ countdownValue }}
+                        </p>
+                    </div>
+
+                    <ng-container *ngIf="isImage">
+                        <img [src]="currentSrc" class="open-image-or-video abc" />
+                    </ng-container>
+
+                    <ng-container *ngIf="!isImage">
+                        <video [src]="currentSrc" class="open-image-or-video abc" playsinline loop autoplay muted controls></video>
+                    </ng-container>
+                    
+
+                </div>
+
+                <!-- IMAGE CLICK OVERLAY end -->
+
+                
+
+                <div class="grid">
+
+                    <!-- Row 1 -->
+                    <div class="img">
+
+                        <img src="/assets/recruitment/cae/knuckle.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Knuckle Analysis</div>
+
+                    </div>
+
+                    <div class="img">
+                        <video class="abc" (click)="openPreview($event)" autoplay muted loop>
+                            <source src="assets/recruitment/cae/cae_videos/impact3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="subtitle">Impact</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/cae/pedal.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Brake Pedal Analysis</div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="img">
+                        <video class="abc" (click)="openPreview($event)" autoplay muted loop>
+                            <source src="assets/recruitment/cae/cae_videos/impact2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="subtitle">Impact</div>
+                    </div>
+
+
+                    <!-- Center div -->
+                    <div class="empty">
+                        <p>
+                            COMPUTER AIDED ENGINEERING
+                        </p>
+                        <p class="inside-text">
+                            Turn simulations into reality and let virtual ideas drive real-world performance.
+                        </p>
+                    </div> 
+
+                    <div class="img">
+                        <video class="abc" (click)="openPreview($event)" autoplay muted loop>
+                            <source src="assets/recruitment/cae/cae_videos/impact.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="subtitle">Impact</div>
+                    </div>
+
+
+
+                    <!-- Row 3 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/cae/brakedisc.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Bake Disc Analysis</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/cae/swing_arm.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Swing Arm alsi</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/cae/wishbone.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Wishbone Analysis</div>
+                    </div>
+
+                    
+                     
+                </div>
+
+            </div>
+            
+            
+<!-- ===============DESIGN overlay=================== -->
+            <div class="functioning" *ngIf="activeOverlay === 4">
+
+                <!-- IMAGE CLICK OVERLAY start-->
+
+                <div *ngIf="showPreview" class="overlay-bg" (click)="closePreview()">
+
+                    <!-- counter -->
+                    <div class="countdown">
+                        <p>
+                            {{ countdownValue }}
+                        </p>
+                    </div>
+
+                    <ng-container *ngIf="isImage">
+                        <img [src]="currentSrc" class="open-image-or-video abc" />
+                    </ng-container>
+
+                    <ng-container *ngIf="!isImage">
+                        <video [src]="currentSrc" class="open-image-or-video abc" playsinline loop autoplay muted controls></video>
+                    </ng-container>
+
+                </div>
+
+                <!-- IMAGE CLICK OVERLAY end -->
+
+                <div class="grid">
+
+                    <div class="img">
+                        <img src="assets/recruitment/design/95th.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">95th Percentile</div>
+                    </div>
+
+
+                    <div class="img">
+                        <img src="/assets/recruitment/design/bw2.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Bodyworks</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/design/chasis.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Chasis</div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="img">
+                        <img src="assets/recruitment/design/8Ochasis.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Chasis</div>
+                    </div>
+
+
+                    <!-- Center div -->
+                    <div class="empty">
+                        <p>
+                            DEIGN AND BODYWORKS
+                        </p>
+                        <p class="inside-text">
+                            Engineer the form, sculpt the airflow, and turn structure into performance.
+                        </p>
+                    </div> 
+
+                    <div class="img">
+                        <img src="assets/recruitment/design/8Otopview.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">95th Percentile</div>
+                    </div>
+
+
+
+                    <!-- Row 3 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/design/rula_analysis_catia.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">RULA Analysis</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/design/honeycomb.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Honey Comb</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/design/cf.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Caron Fiber</div>
+                    </div>
+                     
+                </div>
+            </div>
+
+            
+<!-- ===============BRAKING overlay=================== -->
+            
+            <div class="functioning" *ngIf="activeOverlay === 5">
+
+                <!-- IMAGE CLICK OVERLAY start-->
+
+                <div *ngIf="showPreview" class="overlay-bg" (click)="closePreview()">
+
+                    <!-- counter -->
+                    <div class="countdown">
+                        <p>
+                            {{ countdownValue }}
+                        </p>
+                    </div>
+
+                    <ng-container *ngIf="isImage">
+                        <img [src]="currentSrc" class="open-image-or-video abc" />
+                    </ng-container>
+
+                    <ng-container *ngIf="!isImage">
+                        <video [src]="currentSrc" class="open-image-or-video abc" playsinline loop autoplay muted controls></video>
+                    </ng-container>
+
+                </div>
+
+                <!-- IMAGE CLICK OVERLAY end -->
+
+
+                <div class="grid">
+
+                    <!-- Row 1 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/cae/brakedisc.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Brake Disc</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/braking/tmc.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Tandem Master Cylinder</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/cae/pedal.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Brake Pedal</div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/braking/calliper.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Brake Calliper</div>
+                    </div>
+
+
+                    <!-- Center div -->
+                    <div class="empty">
+                        <p>
+                            BRAKING
+                        </p>
+                        <p class="inside-text">
+                            Ensures safe, reliable vehicle deceleration and stopping through efficient braking system design and integration.
+                        </p>
+                    </div> 
+
+                    <div class="img">
+                        <img src="/assets/recruitment/braking/hoses.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Flexible Brake Hoses</div>
+                    </div>
+
+
+
+                    <!-- Row 3 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle"></div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle"></div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle"></div>
+                    </div>
+
+                    
+                     
+                </div>
+
+            </div>
+            
+<!-- ===============TRANSMISSION overlay=================== -->
+           
+            <div class="functioning" *ngIf="activeOverlay === 6">
+
+                <!-- IMAGE CLICK OVERLAY start-->
+
+                <div *ngIf="showPreview" class="overlay-bg" (click)="closePreview()">
+
+                    <!-- counter -->
+                    <div class="countdown">
+                        <p>
+                            {{ countdownValue }}
+                        </p>
+                    </div>
+
+                    <ng-container *ngIf="isImage">
+                        <img [src]="currentSrc" class="open-image-or-video abc" />
+                    </ng-container>
+
+                    <ng-container *ngIf="!isImage">
+                        <video [src]="currentSrc" class="open-image-or-video abc" playsinline loop autoplay muted controls></video>
+                    </ng-container>
+
+                </div>
+
+                <!-- IMAGE CLICK OVERLAY end -->
+
+                <div class="grid">
+
+                    <!-- Row 1 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/transmission/wheel.jpeg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Wheel</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/transmission/hub_motor.jpeg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Hub Motor</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/cae/swing_arm.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Swing Arm</div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/transmission/gear.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Transmission Gear Assembly</div>
+                    </div>
+
+
+                    <!-- Center div -->
+                    <div class="empty">
+                        <p>
+                            TRANSMISSION
+                        </p>
+                        <p class="inside-text">
+                            Efficiently transfers power from the motor to the wheels for smooth vehicle motion.
+                        </p>
+                    </div> 
+
+                    <div class="img">
+                        <img src="/assets/recruitment/transmission/bldc.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Brushless DC Motor</div>
+                    </div>
+
+
+
+                    <!-- Row 3 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle"></div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle"></div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle"></div>
+                    </div>
+
+                    
+                     
+                </div>
+
+
+
+            </div>
+            
+<!-- ===============ELECTRICAL overlay=================== -->
+ 
+            <div class="functioning" *ngIf="activeOverlay === 7">
+
+                <!-- IMAGE CLICK OVERLAY start-->
+
+                <div *ngIf="showPreview" class="overlay-bg" (click)="closePreview()">
+
+                    <!-- counter -->
+                    <div class="countdown">
+                        <p>
+                            {{ countdownValue }}
+                        </p>
+                    </div>
+
+                    <ng-container *ngIf="isImage">
+                        <img [src]="currentSrc" class="open-image-or-video abc" />
+                    </ng-container>
+
+                    <ng-container *ngIf="!isImage">
+                        <video [src]="currentSrc" class="open-image-or-video abc" playsinline loop autoplay muted controls></video>
+                    </ng-container>
+
+                </div>
+
+                <!-- IMAGE CLICK OVERLAY end -->
+
+                <div class="grid">
+
+                    <!-- Row 1 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/electrical/hub_motor.jpeg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Hub Motor</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/electrical/final_display.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Data Aquisition</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/electrical/battery.JPG" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Battery-Accumulator</div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/electrical/motor_controller.jpeg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Motor Controller</div>
+                    </div>
+
+
+                    <!-- Center div -->
+                    <div class="empty">
+                        <p>
+                            ELECTRICAL
+                        </p>
+                        <p class="inside-text">
+                            Step in where sunlight turns into speed and electrons power the future of mobility.
+                        </p>
+                    </div> 
+
+                    <div class="img">
+                        <img src="/assets/recruitment/electrical/pcb.jpeg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">PCB Printed Circuit Board</div>
+                    </div>
+
+
+
+                    <!-- Row 3 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/solar/mppt.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Max. Power Point Tracking (MPPT)</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/solar/monocrystalline_solar.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Monocrystalline Solar Panel</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/solar/panel_layout.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Solar Panel Layout</div>
+                    </div>
+
+                    
+                     
+                </div>
+
+
+
+            </div>
+            
+<!-- ===============SOLAR overlay=================== -->
+
+            <!-- <div class="functioning" *ngIf="activeOverlay === 8"> -->
+
+                <!-- IMAGE CLICK OVERLAY start-->
+
+                <!-- <div *ngIf="showPreview" class="overlay-bg" (click)="closePreview()">
+
+                    counter -->
+                    <!-- <div class="countdown">
+                        <p>
+                            {{ countdownValue }}
+                        </p>
+                    </div>
+
+                    <ng-container *ngIf="isImage">
+                        <img [src]="currentSrc" class="open-image-or-video abc" />
+                    </ng-container>
+
+                    <ng-container *ngIf="!isImage">
+                        <video [src]="currentSrc" class="open-image-or-video abc" playsinline loop autoplay muted controls></video>
+                    </ng-container> -->
+
+                <!-- </div> -->
+
+                <!-- IMAGE CLICK OVERLAY end -->
+
+                <!-- <div class="grid">
+
+                    <!- Row 1 -->
+                    <!-- <div class="img">
+                        <img src="/assets/recruitment/solar/mppt.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Max. Power Point Tracking (MPPT)</div> --> 
+                    <!-- </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/solar/monocrystalline_solar.jpg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Monocrystalline Solar Panel</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/solar/panel_layout.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Solar Panel Layout</div>
+                    </div>
+
+                    Row 2 -->
+                    <!-- <div class="img">
+                        <video class="abc" (click)="openPreview($event)" autoplay muted loop>
+                            <source src="assets/recruitment/cae/cae_videos/impact2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+
+                     Center div -->
+                    <!-- <div class="empty">
+                        <p>
+                            SOLAR
+                        </p>
+                    </div>  -->
+
+                    <!-- <div class="img">
+                        <video class="abc" (click)="openPreview($event)" autoplay muted loop>
+                            <source src="assets/recruitment/cae/cae_videos/impact.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div> -->
+
+
+
+                    <!-- Row 3 -->
+                    <!-- <div class="img">
+                        <img src="/assets/recruitment/solar/monocrystalline_solar.jpg" class="abc" (click)="openPreview($event)">
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/cae/swing_arm.jpg" class="abc" (click)="openPreview($event)">
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/cae/wishbone.jpg" class="abc" (click)="openPreview($event)">
+                    </div> -->
+
+                    
+                     
+                <!-- </div>
+
+ -->
+
+            <!-- </div>  -->
+            
+<!-- ===============AUTONOMOUS overlay=================== -->
+
+            <div class="functioning" *ngIf="activeOverlay === 9">
+
+                <!-- IMAGE CLICK OVERLAY start-->
+
+                <div *ngIf="showPreview" class="overlay-bg" (click)="closePreview()">
+
+                    <!-- counter -->
+                    <div class="countdown">
+                        <p>
+                            {{ countdownValue }}
+                        </p>
+                    </div>
+
+                    <ng-container *ngIf="isImage">
+                        <img [src]="currentSrc" class="open-image-or-video abc" />
+                    </ng-container>
+
+                    <ng-container *ngIf="!isImage">
+                        <video [src]="currentSrc" class="open-image-or-video abc" playsinline loop autoplay muted controls></video>
+                    </ng-container>
+
+                </div>
+
+                <!-- IMAGE CLICK OVERLAY end -->
+
+                <div class="grid">
+
+                    <!-- Row 1 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/autonomous/noisy_cone_detection.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Object-Cone Detection</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/autonomous/lanedetection.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Lane Detection & Navigation</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/autonomous/rpi_cone_det.jpeg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Object-Cone Detection</div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle"></div>
+                    </div>
+
+
+                    <!-- Center div -->
+                    <div class="empty">
+                        <p>
+                            AUTONOMOUS DRIVING
+                        </p>
+                        <p class="inside-text">
+                            Join us where code meets the road, and we teach machines to drive the future.
+                        </p>
+                    </div> 
+
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle"></div>
+                    </div>
+
+
+
+                    <!-- Row 3 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                    </div>
+
+                    
+                     
+                </div>
+
+
+
+            </div>
+            
+<!-- ===============MEDIA overlay=================== -->
+           
+            <div class="functioning" *ngIf="activeOverlay === 10">
+
+                <!-- IMAGE CLICK OVERLAY start-->
+
+                <div *ngIf="showPreview" class="overlay-bg" (click)="closePreview()">
+
+                    <!-- counter -->
+                    <div class="countdown">
+                        <p>
+                            {{ countdownValue }}
+                        </p>
+                    </div>
+
+                    <ng-container *ngIf="isImage">
+                        <img [src]="currentSrc" class="open-image-or-video abc" />
+                    </ng-container>
+
+                    <ng-container *ngIf="!isImage">
+                        <video [src]="currentSrc" class="open-image-or-video abc" playsinline loop autoplay muted controls></video>
+                    </ng-container>
+
+                </div>
+
+                <!-- IMAGE CLICK OVERLAY end -->
+
+                <div class="grid">
+
+                    <!-- Row 1 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/media/content_creation.jpeg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Content Creation</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/media/editing.jpeg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Content Editing</div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/media/bplan.jpeg" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle">Business Plan</div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle"></div>
+                    </div>
+
+
+                    <!-- Center div -->
+                    <div class="empty">
+                        <p>
+                            MEDIA
+                        </p>
+                        <p class="inside-text">
+                            Manages business planning, cost analysis, content creation, and social media for professional team representation.
+                        </p>
+                    </div> 
+
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle"></div>
+                    </div>
+
+
+
+                    <!-- Row 3 -->
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle"></div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle"></div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/assets/recruitment/blank.png" class="abc" (click)="openPreview($event)">
+                        <div class="subtitle"></div>
+                    </div>
+
+                    
+                     
+                </div>
+
+
+
+            </div>
+        
+    </div>
+</div>

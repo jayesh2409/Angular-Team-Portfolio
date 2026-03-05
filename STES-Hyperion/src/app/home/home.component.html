@@ -1,0 +1,488 @@
+<div class="nav_bg"style="height: 75px; background-color: black;"></div>
+
+
+
+
+<div class="welcome-page">
+    
+    <!-- left half -->
+    <div class="left" style="background-color: aqua;" style="padding: 30px; align-items: left; padding-top: 130px">
+        <div>
+            <div style="display: flex; flex-direction: column; font-family: 'Orbitron', sans-serif !important; letter-spacing: 3px;">
+
+                <div class="stes-written">
+                    <p>
+                        STES
+                    </p>
+                </div>
+
+                <div class="hyperion-written">
+                    <p>
+                        HYPERION
+                    </p>
+                </div>
+
+                <div>
+                    <p class="weclutch">
+                        WE CLUTCH, WE ENDURE...
+                    </p>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- right half -->
+    
+</div>
+
+<!-- main -->
+ <div class="main-content" style="height: auto; width: 100%; background-color: rgb(255, 255, 255);">
+
+
+
+
+
+
+
+    <div class="about-info">
+        <div class="about-info-inside"> 
+            
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="mission">
+
+        <div class="mission-title">
+            <p>
+                OUR MISSION
+            </p>
+        </div>
+
+        <div class="mission-blocks">
+            <div class="mission-blocks-one">
+                <div class="mission-blocks-one-inside">
+                    <div>
+                        <img class="mission-image" src="/assets/home/mission.JPG">
+                    </div>
+                    <div class="mission-text">
+                        <p>
+                            To inspire the next generation of engineers and promote sustainable
+                            transportation. To foster hands-on learning, interdisciplinary
+                            collaboration, and engineering excellence through designing and
+                            building innovative solar vehicles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <div class="about-vehicles">
+
+        <div>
+            <div class="img-border">
+                <img class='vehicle-image' src="assets/image/home_images/hyp.JPG">
+            </div>
+        </div>
+
+        <div style="text-align: justify; padding: 40px; font-family: 'Poppins', sans-serif !important;">
+            <h4>TEAM STES HYPERION</h4>
+            <p>Team STES Hyperion is a Student-led Team from the Sinhgad Technical
+                Education Society in Pune, India, dedicated to design, build, and race a
+                next-generation Solar Vehicle.
+                Team STES Hyperion is a Student-led Team from the Sinhgad Technical
+                Education Society in Pune, India, dedicated to design, build, and race a
+                next-generation Solar Vehicle.
+            </p>
+        </div>
+
+    </div>
+
+
+
+
+
+
+<!-- achievements -->
+
+
+
+    <div class="achievements">
+
+        <div class="mission-title ach-title">
+            <p>
+                OUR ACHIEVEMENTS
+            </p>
+        </div>
+
+        <div class="ach-inside">
+
+
+
+            <!-- all events           WITHOUT MOUSE ENTER EFFECT-->
+            <div class="ach-inside-content">
+
+
+
+
+                <!-- ESVC 2025 -->
+                <div class="ach-imgdiv"
+                    (mouseenter)="onEnter(1)"
+                    (mouseleave)="onLeave()">
+
+                    <!-- IMAGE -->
+                    <img *ngIf="activeNo !== 1"
+                        class="ach-image"
+                        src="assets/home/achievements/esvc_2025.png">
+
+                    <!-- TEXT -->
+                    <div class="ach-text" *ngIf="activeNo === 1">
+                        <div class="ach-mouseenter-content">
+
+                            <div class="title-ach">ESVC 2025</div>
+
+                            <div class="content-ach">
+
+                                <!-- overall and place and vehicle-->
+                                <div class="content-ach-one">
+                                                <div>
+                                                    🏆 1st RUNNER UP
+                                                </div>
+
+                                                <div>
+                                                    Vehicle: ANANTAM 1.0
+                                                </div>
+
+                                                <div>
+                                                    Noida, Uttar Pradesh, India
+                                                </div>
+
+                                </div>
+
+                                <!-- awards -->
+                                <div class="content-ach-two">
+                                                <h3 style="color: rgb(38, 38, 38);">AWARDS</h3>
+                                                
+                                                <h5>🏆 Best Solar</h5>
+                                                <h5>🏆 Best Cross Pad</h5>
+                                                <h5>🏆 Lightest Vehicle</h5>
+                                                <h5>🏆 Best CAE</h5>
+                                                <h5>🏆 Design Runner up</h5>
+                                                
+                                                
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- SEVC 2025 -->
+                <div class="ach-imgdiv"
+                    (mouseenter)="onEnter(2)"
+                    (mouseleave)="onLeave()">
+
+                    <!-- IMAGE -->
+                    <img *ngIf="activeNo !== 2"
+                        class="ach-image"
+                        src="assets/home/achievements/sevc_2025.png">
+
+                    <!-- TEXT -->
+                    <div class="ach-text" *ngIf="activeNo === 2">
+                        <div class="ach-mouseenter-content">
+
+                            <div class="title-ach">SEVC 2025</div>
+
+                            <div class="content-ach">
+
+                                <!-- overall and place and vehicle-->
+                                <div class="content-ach-one">
+                                                <div>
+                                                    🏆 1st RUNNER UP
+                                                </div>
+
+                                                <div>
+                                                    Vehicle: INFINITI 8.0
+                                                </div>
+
+                                                <div>
+                                                    Coimbatore, Tamil Nadu, India
+                                                </div>
+
+                                </div>
+
+                                <!-- awards -->
+                                <div class="content-ach-two">
+                                                <h3 style="color: rgb(38, 38, 38);">AWARDS</h3>
+                                                <h5>🏆 Best Design</h5>
+                                                <h5>🏆 Dynamic Champions</h5>
+                                                <h5>🏆 Hovering & Drag</h5>
+                                                <h5>🏆 Best Endurance</h5>
+                                                <h5>🏆 Rush In Dusk</h5>
+                                                <h5>🏆 Lightest Vehicle</h5>
+                                                <h5>🏆 Autonomous</h5>
+                                            
+                                                
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- SEVC 2024 -->
+                <div class="ach-imgdiv"
+                    (mouseenter)="onEnter(3)"
+                    (mouseleave)="onLeave()">
+
+                    <!-- IMAGE -->
+                    <img *ngIf="activeNo !== 3"
+                        class="ach-image"
+                        src="assets/home/achievements/sevc_2024.png">
+
+                    <!-- TEXT -->
+                    <div class="ach-text" *ngIf="activeNo === 3">
+                        <div class="ach-mouseenter-content">
+
+                            <div class="title-ach">SEVC 2024</div>
+
+                            <div class="content-ach">
+
+                                <!-- overall and place and vehicle-->
+                                <div class="content-ach-one">
+                                                <div>
+                                                    🏆 AIR RANK 1
+                                                </div>
+
+                                                <div>
+                                                    Vehicle: INFINITI 7.0
+                                                </div>
+
+                                                <div>
+                                                    Udupi, Karnataka, India
+                                                </div>
+
+                                                
+                                </div>
+
+                                <!-- awards -->
+                                <div class="content-ach-two">
+                                                <h3 style="color: rgb(38, 38, 38);">AWARDS</h3>
+                                                <h5>🏆 Best Design</h5>
+                                                <h5>🏆 Rain Test - HOH</h5>
+                                                <h5>🏆 Best Endurance</h5>
+                                                <h5>🏆 Rush In Dusk</h5>
+                                                <h5>🏆 Hill Climb</h5>
+                                                
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+    </div>
+
+
+    <!-- achievements over -->
+
+
+
+
+
+
+    <div class="mission-title ach-title">
+            <p>
+                ABOUT
+            </p>
+    </div>
+
+
+    <div class="stes">
+
+
+        <div class="stes-info">
+            <h4>SINHGAD INSTITUTES</h4>
+            <p>Team STES Hyperion is a Student-led Team from the Sinhgad Technical
+                Education Society in Pune, India, dedicated to design, build, and race a
+                next-generation Solar Vehicle.
+                Team STES Hyperion is a Student-led Team from the Sinhgad Technical
+                Education Society in Pune, India, dedicated to design, build, and race a
+                next-generation Solar Vehicle.
+            </p>
+        </div>
+
+        <div>
+            <div class="img-border">
+                <img class="stes-image" src="/assets/image/home_images/c1c2.webp">
+            </div>
+        </div>
+        
+      
+    </div>
+
+
+
+
+
+    <div class="team-members">
+        <div>
+            <div class="img-border">
+                <img class='team-image' src="/assets/image/team_image/2025team.JPG">
+            </div>
+        </div>
+
+        <div style="text-align: justify; padding: 40px; font-family: 'Poppins', sans-serif !important;">
+            <h4>TEAM</h4>
+            <p>We believe that every team member should maintain a functional understanding of all subsystems—sufficient to identify potential issues and meaningfully contribute to their resolution. This shared technical awareness, combined with strong team cohesion, forms the foundation of our innovation, efficiency, and resilience.
+            </p>
+            <div style="padding-top: 25px;">
+                <a class="vehicles-tab" (click)="goToTeam()">View Team</a>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+
+    <div class="about-team">
+
+
+        <div class="about-team-info">
+            <h4>VEHICLES</h4>
+            <p>Team STES Hyperion is a Student-led Team from the Sinhgad Technical
+                Education Society in Pune, India, dedicated to design, build, and race a
+                next-generation Solar Vehicle.
+                Team STES Hyperion is a Student-led Team from the Sinhgad Technical
+                Education Society in Pune, India, dedicated to design, build, and race a
+                next-generation Solar Vehicle.
+            </p>
+
+            <div style="padding-top: 25px;">
+                <a class="vehicles-tab" (click)="goToVehicles()">View Vehicles</a>
+            </div>
+
+        </div>
+
+        <div>
+            <div class="img-border">
+                <img class="about-team-image" src="/assets/home/cover.JPG">
+            </div>
+        </div>
+        
+      
+    </div>
+
+
+    <!-- sponsors of team stes hyperion -->
+    <div class="sponsors-home" style="display: flex; flex-direction: column;">
+
+        <!-- 1 title -->
+        <div class="sponsors-title-home" style="padding: 20px; padding-top: 30px; padding-bottom: 80px; text-align: center;">
+            <div>
+                <p>OUR SPONSORS</p>
+            </div>
+        </div>
+
+        <!-- 2 logos -->
+         <div class="sponsors-logo-home" style="padding: 20px;">
+
+            <!-- logo L1 myconstruction-->
+            <div style="width: 100px; height: auto;">
+                <a href="https://www.myconstruction.co.in/">
+                    <img class="logo-for-hover" src="/assets/sponsors/myconstruction.png">
+                </a>
+            </div>
+
+
+            <!-- logo L2 bentork-->
+            <div style="width: 100px; height: auto;">
+                <a href="https://bentork.com/">
+                    <img class="logo-for-hover" src="/assets/sponsors/bentork.png">
+                </a>
+            </div>
+
+
+            <!-- logo L3 solidworks-->
+            <div style="width: 100px; height: auto;">
+                <a href="https://www.solidworks.com/customer-story/dentium-streamlines-design-and-development-combining-solidworks-and-3dexperience-works/">
+                    <img class="logo-for-hover" src="/assets/sponsors/solidworks.png">
+                </a>
+            </div>
+
+
+            <!-- logo L4 ansys-->
+            <div style="width: 100px; height: auto;">
+                <a href="https://www.ansys.com/">
+                    <img class="logo-for-hover" src="/assets/sponsors/ansys.png">
+                </a>
+            </div>
+
+            <!-- logo L5 cabonext-->
+            <div style="width: 100px; height: auto;">
+                <a href="https://www.carbonext.net/">
+                    <img class="logo-for-hover" src="/assets/sponsors/carbonext.png">
+                </a>
+            </div>
+
+            <!-- logo L6 adishgears-->
+            <div style="width: 100px; height: auto;">
+                <a href="https://www.aadishgears.com/">
+                    <img class="logo-for-hover" src="/assets/sponsors/adishgears.png">
+                </a>
+            </div>
+
+            <!-- logo L7 therandomsstudio-->
+            <div style="width: 100px; height: auto;">
+                <a href="https://therandomsstudios.com/">
+                    <img class="logo-for-hover" src="/assets/sponsors/therandomstudio.jpeg">
+                </a>
+            </div>
+
+
+
+
+         </div>
+    </div>
+
+
+    
+
+ </div>
+
+

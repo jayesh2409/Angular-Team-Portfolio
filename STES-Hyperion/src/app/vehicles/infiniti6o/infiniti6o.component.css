@@ -1,0 +1,80 @@
+.image-container-six{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container-six img{
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* /* // font size changing remember to change it for all the vehicles */
+
+h2 {
+  font-size: 20px; /* change the size */
+  /* color: blue;     optional: change color */
+  font-weight:bolder; /* optional */
+}
+
+h4 {
+  font-size: 22px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* for content */
+
+.parent-container {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.title {
+  font-size: 2rem;
+  
+  margin-bottom: 20px;
+  -webkit-box-reflect: below -0.8px linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+.child-container {
+  display: flex;
+  gap: 20px;              /* spacing between children */
+  justify-content: center;
+  flex-wrap: wrap;        /* helps on smaller screens */
+  color: #FE8374;
+}
+
+.child {
+  flex: 1 1 45%;          /* take ~45% width on desktop */
+  min-width: 250px;       /* don’t shrink too small */
+  background-color: #000000;
+}
+
+/* Mobile view (stacked) */
+@media (max-width: 768px) {
+  .child-container {
+    flex-direction: column;   /* stack vertically */
+    align-items: center;
+  }
+
+  .child {
+    width: 90%;               /* take most of mobile width */
+  }
+}

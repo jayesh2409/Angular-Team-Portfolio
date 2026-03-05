@@ -1,0 +1,223 @@
+.team-body{
+  display: block;
+  background-color: white;
+  color: rgb(44, 44, 44);
+  min-height: 100vh;
+  width: 100%;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.top-image{
+    background-image: url('/assets/image/team_image/2025team.JPG'); /* your image */
+    background-size: cover;
+    background-position: center;
+    height: 650px; /* how tall the image area is */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 0px;;
+}
+
+
+
+
+
+
+
+
+
+
+
+.main-title{
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif !important;
+  
+  font-weight: 900;
+  padding: 20px;
+  white-space: nowrap;
+}
+
+.main-full-block{
+  padding: 20px;
+}
+
+.main-full-block-border{
+  background-color: antiquewhite;
+  border: 2px solid black;
+  /* padding: 20px; */
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.core-team{
+
+
+  /* temporary part delete after wards */
+  height: auto;
+  width: 100%;
+
+  padding-top: 100px;
+
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.members-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 30px;
+  font-weight: 900;
+  padding: 20px;
+  white-space: nowrap; /* Prevents breaking text into multiple lines */
+}
+
+.leader {
+  /* padding-top: 400px; */
+  width: 200px;
+  text-align: center;
+  padding: 20px;
+}
+
+.img-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+
+  transition: transform 0.3s ease-in-out; /* smooth animation */
+  cursor: pointer;
+}
+
+.img-circle:hover {
+  transform: scale(1.05); /* size increases by 10% */
+}
+
+.name{
+  font-family: 'Titillium Web', sans-serif;
+  font-weight:700;
+  padding: 7px;
+}
+
+.role{
+  font-family: 'Titillium Web', sans-serif;
+  font-weight:400;
+  padding: 7px;
+}
+
+.fa-brands{
+  padding: 5px;
+  font-size: x-large;
+  text-decoration: none;
+}
+
+a[aria-label="LinkedIn"] i {
+  color: #000000;
+}
+
+a[aria-label="LinkedIn"] i:hover {
+  color: #0077B5;
+}
+
+.senior-team{
+
+
+  
+  /* temporary part delete after wards */
+  height: auto;
+  width: 100%;
+
+  background: #0095ff;
+}
+
+.core-members{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  justify-items: center; /* centers cards inside cells */
+}
+
+.core-members .leader:nth-child(4) {
+  grid-column: 2; /* put in middle column */
+}
+
+
+.body{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+}
+
+
+
+
+
+
+
+
+
+@media(max-width: 784px) {
+    .top-image{
+        height: 300px;
+    }
+
+  .main-full-block{
+    /* */
+    padding: 10px;
+     align-items: center;
+    justify-content: center;
+  }
+
+  .main-full-block-border{
+    background-color: antiquewhite;
+    border: 1px solid black;
+    /* padding: 10px; */
+  }
+
+  .core-members,
+    .body {
+      grid-template-columns: 1fr; /* ONE card per row */
+      gap: 40px;
+    }
+
+
+  .core-members .leader:nth-child(4) {
+    grid-column: auto; /* remove manual center positioning */
+  }
+
+
+  .leader {
+    width: 100%; /* allow full width */
+    max-width: 260px; /* optional: keep nice card size */
+  }
+
+  .members-title{
+    font-size: 20px;
+  }
+
+}

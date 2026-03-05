@@ -1,0 +1,41 @@
+.contact-container {
+    background: url("/assets/image/STES_H/coverimage1.JPG") no-repeat center center;
+    background-size: cover;
+    height: 800px;
+    color: white;
+    display: flex;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-weight:400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.reach-us{
+    height: auto;
+    width: 100%;
+    background-color: rgb(116, 116, 116);
+    color: white;
+}
+
+
+
+
+
+@media (min-width: 768px) {
+  .parent {
+    flex-direction: row; /* Desktop */
+  }
+}
+
+
+
+.hfive{
+    color:rgb(49, 48, 48)
+}
+.hsix{
+    color: rgb(84, 84, 84); 
+}
