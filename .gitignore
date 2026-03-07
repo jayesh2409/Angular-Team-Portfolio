@@ -1,7 +1,6 @@
 # Node.js dependencies
 node_modules
 /build
-/dist
 .npm
 .angular
 .DS_Store
