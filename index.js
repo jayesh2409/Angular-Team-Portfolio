@@ -50,10 +50,15 @@ Message: ${message}
 });
 
 // ===== Angular Routing =====
-app.use((req, res) => {
-  res.sendFile(path.join(__dirname, "dist/stes-hyperion/browser/index.html"));
-});
+app.use(express.static(
+  path.join(__dirname, "STES-Hyperion/dist/stes-hyperion/browser")
+));
 
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "STES-Hyperion/dist/stes-hyperion/browser/index.html")
+  );
+});
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
