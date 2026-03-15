@@ -1,0 +1,20 @@
+{
+  "routes": {
+    "/": {},
+    "/about": {},
+    "/contact": {},
+    "/home": {},
+    "/recruitment": {},
+    "/sponsors": {},
+    "/team": {},
+    "/vehicles": {},
+    "/vehicles/anantam": {},
+    "/vehicles/infiniti1o": {},
+    "/vehicles/infiniti2o": {},
+    "/vehicles/infiniti3o": {},
+    "/vehicles/infiniti5o": {},
+    "/vehicles/infiniti6o": {},
+    "/vehicles/infiniti7o": {},
+    "/vehicles/infiniti8o": {}
+  }
+}
