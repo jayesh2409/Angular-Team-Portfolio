@@ -2,12 +2,18 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const path = require("path");
 
 dotenv.config();
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
+
+
+app.use(express.static(path.join(__dirname, "dist/stes-hyperion/browser")));
+
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -17,6 +23,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// ===== API Route =====
 app.post("/send-mail", async (req, res) => {
   console.log("REQUEST BODY:", req.body);
 
@@ -28,9 +35,9 @@ app.post("/send-mail", async (req, res) => {
       to: process.env.EMAIL_USER,
       subject: "New Contact Message from WebSite",
       text: `
-          Name: ${name}
-          Email: ${email}
-          Message: ${message}
+Name: ${name}
+Email: ${email}
+Message: ${message}
       `,
     });
 
@@ -42,6 +49,13 @@ app.post("/send-mail", async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+// ===== Angular Routing =====
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, "dist/stes-hyperion/browser/index.html"));
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
